@@ -1,61 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared Bookmarks</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shared Bookmarks</title>
+  </head>
   <body>
     <header>
-    <h1>Shared Bookmarks</h1>
-    <p>Save and share useful links with others.</p>
-  </header>
-  <main>
-    <!-- USER SELECTION -->
-    <section>
-      <h2>Select User</h2>
+      <h1>Shared Bookmarks</h1>
+      <p>Save and share useful links with others.</p>
+    </header>
+    <main>
+      <!-- USER SELECTION -->
+      <section>
+        <h2>Select User</h2>
 
-      <label for="user-select">Choose a user:</label>
-      <select id="user-select">
-        <option value="">-- Select a user --</option>
-      </select>
-    </section>
+        <label for="user-select">Choose a user:</label>
+        <select id="user-select">
+          <option value="">-- Select a user --</option>
+        </select>
+      </section>
 
-    <!-- EMPTY MESSAGE -->
-    <p id="empty-message" hidden>
-      This user has no bookmarks yet.
-    </p>
+      <!-- EMPTY MESSAGE -->
+      <p id="empty-message" hidden aria-live="polite">
+        This user has no bookmarks yet.
+      </p>
 
-    <!-- BOOKMARK LIST -->
-    <section>
-      <h2>Bookmarks</h2>
-      <ul id="bookmark-list"></ul>
-    </section>
+      <!-- BOOKMARK LIST -->
+      <section>
+        <h2>Bookmarks</h2>
+        <ul id="bookmark-list"></ul>
+      </section>
 
-    <!-- ADD BOOKMARK FORM -->
-    <section>
-      <h2>Add a New Bookmark</h2>
-
-      <form id="bookmark-form">
-        <div>
-          <label for="url">URL</label>
-          <input type="url" id="url" required />
-        </div>
-
-        <div>
-          <label for="title">Title</label>
-          <input type="text" id="title" required />
-        </div>
-
-        <div>
-          <label for="description">Description</label>
-          <textarea id="description" required></textarea>
-        </div>
-
-        <button type="submit">Add Bookmark</button>
-      </form>
-    </section>
-  </main>
+      <!-- ADD BOOKMARK FORM -->
+      <section aria-labelledby="form-heading">
+        <h2 id="form-heading">Add a New Bookmark</h2>
+        <form id="bookmark-form">
+          <div>
+            <label for="url">URL:</label>
+            <input
+              type="url"
+              id="url"
+              required
+              placeholder="https://example.com"
+            />
+          </div>
+          <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" required />
+          </div>
+          <div>
+            <label for="description">Description:</label>
+            <textarea id="description" required></textarea>
+          </div>
+          <button type="submit">Add Bookmark</button>
+          <p id="form-error" aria-live="polite" style="color: red"></p>
+        </form>
+      </section>
+    </main>
     <script type="module" src="script.js"></script>
   </body>
 </html>

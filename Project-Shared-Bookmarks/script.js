@@ -114,6 +114,19 @@ bookmarkForm.addEventListener("submit", (e) => {
   renderBookmarks(userId);
 });
 
+// Copy & Like button delegation
+bookmarkList.addEventListener("click", (e) => {
+  const userId = userSelect.value;
+  if (!userId) return;
+
+  // Copy URL
+  if (e.target.classList.contains("copy-btn")) {
+    navigator.clipboard.writeText(e.target.dataset.url);
+    const originalText = e.target.textContent;
+    e.target.textContent = "Copied!";
+    setTimeout(() => e.target.textContent = originalText, 1500);
+  }
+});
 
 
 init();

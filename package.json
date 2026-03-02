@@ -1,0 +1,21 @@
+{
+  "name": "the-piscine-shared-bookmarks",
+  "version": "1.0.0",
+  "description": "Welcome to the Piscine! This repo contains the projects required to complete the Piscine module.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marissamolejon/The-Piscine-Shared-Bookmarks.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/marissamolejon/The-Piscine-Shared-Bookmarks/issues"
+  },
+  "homepage": "https://github.com/marissamolejon/The-Piscine-Shared-Bookmarks#readme"
+}

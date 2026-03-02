@@ -126,6 +126,19 @@ bookmarkList.addEventListener("click", (e) => {
     e.target.textContent = "Copied!";
     setTimeout(() => e.target.textContent = originalText, 1500);
   }
+
+  // Like
+  if (e.target.classList.contains("like-btn")) {
+    const bookmarkId = parseInt(e.target.dataset.id);
+    const data = getData(userId);
+    const item = data.find(b => b.id === bookmarkId);
+    if (item) {
+      item.likes = (item.likes || 0) + 1;
+      setData(userId, data);
+      // Update counter only
+      e.target.querySelector("span").textContent = item.likes;
+    }
+  }
 });
 
 

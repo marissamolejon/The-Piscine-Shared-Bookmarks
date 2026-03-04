@@ -69,3 +69,8 @@ All of the below requirements must be met for the project to be considered compl
 - After creating a new bookmark, the list of bookmarks for the current user is shown, including the new bookmark
 - The website must score 100 for accessibility in Lighthouse
 - Unit tests must be written for at least one non-trivial function
+
+## Testing
+To run the unit tests for this project, use the following command:
+`npm test`
+The tests verify the core validation logic in `script.js` ensuring that bookmarks are not saved with empty titles or invalid URLs.

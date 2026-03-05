@@ -5,7 +5,7 @@
 A small web application that allows users to save, organize, and share useful web resources with others. Users can add bookmarks with a title and description, browse bookmarks saved by different users, and interact with them through likes or quick copy actions.
 
 ## Link to the deployed website
-https://piscine-sharedbookmarks.netlify.app/
+https://the-shared-bookmarks.netlify.app/
 
 
 ### User Story
@@ -82,7 +82,8 @@ npm install http-server
 
 ## Screenshot
 
-(Add a screenshot of your project here once finished)
+![App Screenshot](https://i.postimg.cc/jddJ0pwR/Screenshot-2026-03-05-at-18-27-07.png)
+![App Screenshot](https://i.postimg.cc/0Q0rhn9b/Screenshot-2026-03-05-at-18-27-15.png)
 
 ## Testing
 To run the unit tests for this project, use the following command:

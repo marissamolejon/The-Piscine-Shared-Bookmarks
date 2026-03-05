@@ -82,7 +82,7 @@ npm install http-server
 
 ## Screenshot
 
-![App Screenshot](https://i.postimg.cc/jddJ0pwR/Screenshot-2026-03-05-at-18-27-07.png)
+![App Screenshot](https://i.postimg.cc/xj7SnHqc/Screenshot-2026-03-05-at-18-26-57.png)
 ![App Screenshot](https://i.postimg.cc/0Q0rhn9b/Screenshot-2026-03-05-at-18-27-15.png)
 
 ## Testing

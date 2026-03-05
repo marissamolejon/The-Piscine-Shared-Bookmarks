@@ -1,6 +1,6 @@
 ### Testing Record
 ## Validation Function (validateInput)
-### Purpose
+## Purpose
 The goal of these tests was to verify the input validation logic used in script.js for adding bookmarks. The function ensures that:
 
 1. Title and description are not empty.
@@ -18,7 +18,7 @@ function validateInput(url, title, description) {
     }
 }
 ```
-### Test Cases
+## Test Cases
 
 1. Ensures function detects malformed URLs.
 ```

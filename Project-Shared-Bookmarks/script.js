@@ -80,8 +80,13 @@ function validateInput(url, title, description) {
 
 // 1. Initializing the user list
 function init() {
-// We don't create options via JS, as they are already defined in the HTML.
-// This ensures that the list will contain exactly 5 users.
+  const users = getUserIds();
+  users.forEach((id) => {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = id;
+    userSelect.appendChild(option);
+  });
 }
 
 // 2. Change user

@@ -24,7 +24,6 @@ function renderBookmarks(userId) {
 
   const bookmarks = getData(userId);
 
-
   if (!bookmarks || bookmarks.length === 0) {
     emptyMessage.hidden = false;
     return;
@@ -60,16 +59,19 @@ function renderBookmarks(userId) {
 
 // --- VALIDATION ---
 function validateInput(url, title, description) {
-  if (!title.trim() || !description.trim()) return "Title and Description cannot be empty.";
-  try { new URL(url); } catch (_) { return "Please provide a valid URL (e.g., https://google.com)."; }
+  if (!title.trim() || !description.trim())
+    return "Title and Description cannot be empty.";
+  try {
+    new URL(url);
+  } catch (_) {
+    return "Please provide a valid URL (e.g., https://google.com).";
+  }
   return null;
 }
 
 // --- EVENT HANDLERS ---
 
-
 function init() {
-
   const users = getUserIds();
   users.forEach((id) => {
     const option = document.createElement("option");
@@ -81,34 +83,38 @@ function init() {
 
 userSelect.addEventListener("change", (e) => renderBookmarks(e.target.value));
 
-
 bookmarkForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const userId = userSelect.value;
-  if (!userId) { alert("Select a user first!"); return; }
+  if (!userId) {
+    alert("Select a user first!");
+    return;
+  }
 
   const url = document.getElementById("url").value;
   const title = document.getElementById("title").value;
   const description = document.getElementById("description").value;
 
-
   const error = validateInput(url, title, description);
-  if (error) { formError.textContent = error; return; }
+  if (error) {
+    formError.textContent = error;
+    return;
+  }
   formError.textContent = "";
 
   const newBookmark = {
     id: Date.now(),
-    url, title, description,
+    url,
+    title,
+    description,
     createdAt: Date.now(),
-    likes: 0
+    likes: 0,
   };
-
 
   const currentData = getData(userId);
   currentData.push(newBookmark);
   setData(userId, currentData);
-
 
   bookmarkForm.reset();
   renderBookmarks(userId);
@@ -124,14 +130,14 @@ bookmarkList.addEventListener("click", (e) => {
     navigator.clipboard.writeText(e.target.dataset.url);
     const originalText = e.target.textContent;
     e.target.textContent = "Copied!";
-    setTimeout(() => e.target.textContent = originalText, 1500);
+    setTimeout(() => (e.target.textContent = originalText), 1500);
   }
 
   // Like
   if (e.target.classList.contains("like-btn")) {
     const bookmarkId = parseInt(e.target.dataset.id);
     const data = getData(userId);
-    const item = data.find(b => b.id === bookmarkId);
+    const item = data.find((b) => b.id === bookmarkId);
     if (item) {
       item.likes = (item.likes || 0) + 1;
       setData(userId, data);
@@ -140,6 +146,5 @@ bookmarkList.addEventListener("click", (e) => {
     }
   }
 });
-
 
 init();

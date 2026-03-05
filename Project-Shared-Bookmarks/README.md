@@ -83,3 +83,8 @@ npm install http-server
 ## Screenshot
 
 (Add a screenshot of your project here once finished)
+
+## Testing
+To run the unit tests for this project, use the following command:
+`npm test`
+The tests verify the core validation logic in `script.js` ensuring that bookmarks are not saved with empty titles or invalid URLs.

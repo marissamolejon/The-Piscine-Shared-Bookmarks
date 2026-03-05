@@ -1,4 +1,4 @@
-### Testing Record
+# Testing Record
 ## Validation Function (validateInput)
 ## Purpose
 The goal of these tests was to verify the input validation logic used in script.js for adding bookmarks. The function ensures that:

@@ -41,18 +41,7 @@ Adding a new bookmark should be simple and accessible through a clear form where
 - LocalStorage API
 - DOM Manipulation
 
-## Project Structure
-shared-bookmarks/
 
-│
-
-├── index.html
-
-├── script.js
-
-├── storage.js
-
-└── README.md
 
 
 ## Set up

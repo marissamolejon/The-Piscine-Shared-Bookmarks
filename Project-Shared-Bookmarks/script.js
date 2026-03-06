@@ -17,19 +17,17 @@ const formError = document.getElementById("form-error");
 function renderBookmarks(userId) {
   bookmarkList.innerHTML = "";
 
-  if (!userId) {
-    emptyMessage.hidden = true;
-    return;
-  }
+ if (!userId) return;
 
   const bookmarks = getData(userId);
 
-  if (!bookmarks || bookmarks.length === 0) {
-    emptyMessage.hidden = false;
-    return;
-  }
-
-  emptyMessage.hidden = true;
+ if (!bookmarks || bookmarks.length === 0) {
+  const li = document.createElement("li");
+  li.textContent = "This user has no bookmarks yet.";
+  li.classList.add("empty-message");
+  bookmarkList.appendChild(li);
+  return;
+}
 
   // sort: new to old
   const sorted = [...bookmarks].sort((a, b) => b.createdAt - a.createdAt);
